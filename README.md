@@ -24,7 +24,7 @@
 
 ```
 
-$ git clone https://
+$ git clone https://github.com/Dev-Messias/digital-store.git
 
 ```
 > Acesse a página utilizando `cd digital-store`
