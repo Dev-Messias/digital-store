@@ -1,11 +1,12 @@
-
+import { BrowserRouter } from "react-router-dom";
+import RoutesApp from "./routes";
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-4xl" >Digital-Store</h1>
-    </>
+    <BrowserRouter>
+      <RoutesApp />
+    </BrowserRouter>
   )
 }
 
