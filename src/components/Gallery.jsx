@@ -20,7 +20,7 @@ function Gallery() {
                         pagination={{ clickable: true }}
                         navigation={false}
                         autoplay={{ delay: 6000 }}
-                        className="w-full"
+                        className="w-ful"
                     >
                         {data.map((item) => (
                             <SwiperSlide key={item.id} >
