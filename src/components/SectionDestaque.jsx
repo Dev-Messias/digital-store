@@ -125,7 +125,7 @@ function SectionDestaque() {
                                     <div className=" bg-transparent flex flex-col items-cente justify-center " >
                                         <div className=" flex flex-col items-center" >
                                             <div className="bg-white rounded-full p-2 shadow-lg mb-2   " >
-                                                {<item.icone className="text-3xl lg:text-4xl text-gray-400 hover:text-pink-600 cursor-pointer duration-200" />}
+                                                {<item.icone className="text-3xl lg:text-5xl text-gray-400 hover:text-pink-600 cursor-pointer duration-200" />}
                                             </div>
                                             <div>
                                                 <p className="text-sm" >{item.titulo}</p>

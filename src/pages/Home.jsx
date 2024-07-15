@@ -1,6 +1,7 @@
 import Gallery from "../components/Gallery";
 import Header from "../components/Header";
 import SectionDestaque from "../components/SectionDestaque";
+import SectionList from "../components/SectionList";
 
 function Home(){
     return(
@@ -8,6 +9,7 @@ function Home(){
             <Header/>
             <Gallery/>
             <SectionDestaque/>
+            <SectionList/>
         </div>
     )
 }
