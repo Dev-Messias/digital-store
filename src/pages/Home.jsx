@@ -8,12 +8,12 @@ import SectionOferta from "../components/SectionOferta";
 function Home(){
     return(
         <div>
-            <Header/>
+            
             <Gallery/>
             <SectionDestaque/>
             <SectionList/>
             <SectionOferta/>
-            <Footer/>
+            
         </div>
     )
 }

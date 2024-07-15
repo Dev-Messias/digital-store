@@ -2,6 +2,7 @@ import ProductCard from "./ProductCard";
 import Container from "./Container";
 import { FaArrowRightLong } from "react-icons/fa6";
 import tenisItem from '../assets/listaItem/tenis2.png'
+import  {Link}  from "react-router-dom";
 
 const dataList =[
     {
@@ -81,7 +82,7 @@ function SectionList() {
                 <div className="w-full flex flex-col" >
                         <div className="w-full flex flex-row items-center justify-between mb-10" >
                             <h4 className="text-gray-700 text-xl font-semibold " >Coleções em destaque</h4>
-                            <a href="#" className="flex flex-row items-center gap-1 text-pink-600 text-base font-medium ">Ver todo <FaArrowRightLong/> </a>
+                            <Link to="/product-list" className="flex flex-row items-center gap-1 text-pink-600 text-base font-medium ">Ver todos <FaArrowRightLong/> </Link>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                 {dataList.map((item)=>(

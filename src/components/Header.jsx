@@ -53,7 +53,7 @@ function Header() {
                     <nav>
                         <ul className="w-full flex flex-row text-lg font-medium gap-9 " >
                             <li><Link to="/" className={`${active === 'home' ? 'text-pink-600 underline' : 'text-slate-600'} cursor-pointer hover:underline hover:text-pink-600`} onClick={() => handleSetActive('home')} >Home</Link></li>
-                            <li><Link to="/" className={`${active === 'produtos' ? 'text-pink-600 underline' : 'text-slate-600'} cursor-pointer hover:underline hover:text-pink-600`} onClick={() => handleSetActive('produtos')} >Produtos</Link></li>
+                            <li><Link to="/product-list" className={`${active === 'produtos' ? 'text-pink-600 underline' : 'text-slate-600'} cursor-pointer hover:underline hover:text-pink-600`} onClick={() => handleSetActive('produtos')} >Produtos</Link></li>
                             <li><Link to="/" className={`${active === 'categorias' ? 'text-pink-600 underline' : 'text-slate-600'} cursor-pointer hover:underline hover:text-pink-600`} onClick={() => handleSetActive('categorias')} >Categorias</Link></li>
                             <li><Link to="/" className={`${active === 'pedidos' ? 'text-pink-600 underline' : 'text-slate-600'} cursor-pointer hover:underline hover:text-pink-600`} onClick={() => handleSetActive('pedidos')} >Meus Pedidos</Link></li>
                         </ul>
