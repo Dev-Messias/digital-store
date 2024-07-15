@@ -1,12 +1,13 @@
 import Container from "./Container";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import tenis1 from '../assets/tenis1.png'
+import tenis3 from '../assets/listaItem/tenis3.png'
 import ornament from '../assets/ornament.png'
 
 
 const data = [
     { id: '1', url: tenis1, ornament: ornament },
-    { id: '2', url: tenis1, ornament: ornament },
+    { id: '2', url: tenis3, ornament: ornament },
     { id: '3', url: tenis1, ornament: ornament },
 ]
 
