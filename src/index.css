@@ -6,3 +6,31 @@
 .swiper-pagination-bullet-active{
     background-color: #db2777 !important;
 }
+
+.btn-treinaweb {
+    @apply bg-green-400 text-white p-2 m-5 rounded;
+ }
+ 
+ 
+ 
+  .swiper-slide #swpSlid {
+    @apply  rounded-md;
+ }
+
+ 
+
+ .mySwiper .swiper-slide #swpSlid{
+    @apply border-0 ;
+    @apply  rounded-md;
+
+  }
+
+  .mySwiper .swiper-slide #swpSlid {
+    @apply  rounded-md;
+  }
+  
+  .mySwiper .swiper-slide-thumb-active #swpSlid{
+   
+    @apply border-2 border-pink-600;
+    @apply  rounded-md;
+  }
