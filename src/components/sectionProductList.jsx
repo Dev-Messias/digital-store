@@ -1,81 +1,20 @@
+import  { useState } from 'react';
 import ProductCard from "./ProductCard";
 import Container from "./Container";
 import { FaArrowRightLong } from "react-icons/fa6";
 import tenisItem from '../assets/listaItem/tenis2.png'
 import Drawer from "./Drawer";
+import { products } from '../dados/index';
 
-const dataList = [
-    {
-        id: 1,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 30,
-        precoAnterior: 200
-    },
-
-    {
-        id: 2,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 3,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 4,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 40,
-        precoAnterior: 500
-    },
-    {
-        id: 5,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 6,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 20,
-        precoAnterior: 260
-    },
-    {
-        id: 7,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 8,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    }
-]
 
 function SectionProductList() {
+    const [selectedValue, setSelectedValue] = useState('');
+
+    function handleChange(e){
+        setSelectedValue(e.target.value)
+    }
+
+
     return (
         <div className="w-full py-6 mt-0 lg:mt-16 " >
             <Container>
@@ -86,10 +25,10 @@ function SectionProductList() {
                         </div>
                         <div className="md:w-full flex flex-row items-center justify-center  gap-3 mb-5 md:mb-0" >
                             <div className=" w-full flex flex-row md:justify-end" >
-                                <select id="Select" className="w-64 lg:w-96  border-2 py-2 px-2" >
-                                    <option disabled selected >Ordenar por</option>
-                                    <option  >Menor preço</option>
-                                    <option  >Mais relevantes</option>
+                                <select id="Select" value={selectedValue} onChange={handleChange} className="w-64 lg:w-96  border-2 py-2 px-2" >
+                                    <option disabled >Ordenar por</option>
+                                    <option value="Menor preco" >Menor preço</option>
+                                    <option value="Mais relevantes"  >Mais relevantes</option>
                                 </select>
                             </div>
                             <div className="block md:hidden" >
@@ -139,12 +78,12 @@ function SectionProductList() {
                             </ul>
                         </div>
                         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                            {dataList.map((item) => (
+                            {products.map((item) => (
                                 <ProductCard key={item.id}
                                     titulo={item.titulo}
                                     categoria={item.categoria}
                                     preco={item.preco}
-                                    imagem={item.img}
+                                    imagem={item.imagem}
                                     desconto={item.desconto}
                                     precoAnterior={item.precoAnterior}
                                 />

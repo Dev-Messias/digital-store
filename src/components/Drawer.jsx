@@ -4,7 +4,7 @@ import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import logoIcon from '../assets/logo.png';
 import { CiFilter } from "react-icons/ci";
 
-import  {Link}  from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Drawer({ children, menu, filter }) {
 
@@ -13,13 +13,11 @@ function Drawer({ children, menu, filter }) {
         setIsOpen(!isOpen);
     };
 
-
-
     return (
         <div>
-            {filter && <div className='p-1 bg-pink-600 cursor-pointer hover:bg-pink-700 rounded-lg text-white' ><CiFilter  onClick={toggleDrawer} className='  flex md:hidden text-3xl' /></div>}
+            {filter && <div className='p-1 bg-pink-600 cursor-pointer hover:bg-pink-700 rounded-lg text-white' ><CiFilter onClick={toggleDrawer} className='  flex md:hidden text-3xl' /></div>}
             {menu && <IoMenu onClick={toggleDrawer} className='flex md:hidden text-2xl' />}
-            
+
             <div
                 className={`fixed inset-0 z-50 bg-gray-800 bg-opacity-75 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 onClick={toggleDrawer}
@@ -39,7 +37,7 @@ function Drawer({ children, menu, filter }) {
                         <div className="flex flex-col  mt-10  " >
                             <h6 className="font-semibold" >Páginas</h6>
                             <ul className=" flex flex-col mt-4 gap-3" >
-                                <li><Link to="/"  onClick={toggleDrawer} className={`text-lg cursor-pointer hover:underline text-gray-500 font-semibold hover:text-pink-600`}>Home</Link></li>
+                                <li><Link to="/" onClick={toggleDrawer} className={`text-lg cursor-pointer hover:underline text-gray-500 font-semibold hover:text-pink-600`}>Home</Link></li>
                                 <li><Link to="/product-list" onClick={toggleDrawer} className={`text-lg cursor-pointer hover:underline text-gray-500 font-semibold hover:text-pink-600`}>Produtos</Link></li>
                                 <li><Link to="/" onClick={toggleDrawer} className={`text-lg cursor-pointer hover:underline text-gray-500 font-semibold hover:text-pink-600`}>Categorias</Link></li>
                                 <li><Link to="/" onClick={toggleDrawer} className={`text-lg cursor-pointer hover:underline text-gray-500 font-semibold hover:text-pink-600`}>Meus Pedidos</Link></li>
@@ -47,7 +45,7 @@ function Drawer({ children, menu, filter }) {
                         </div>
                         <p className="w-full h-[1px] bg-gray-700 rounded-full mt-7" ></p>
                         <div className="flex flex-row items-center gap-4 mt-6 " >
-                            <a href="#" className="bg-pink-600 px-6 font-semibold text-center py-1 rounded-lg text-slate-50 hover:bg-pink-700 duration-200 " >Entrar</a>
+                            <Link to="#" className="bg-pink-600 px-6 font-semibold text-center py-1 rounded-lg text-slate-50 hover:bg-pink-700 duration-200 " >Entrar</Link>
                             <a href="#" className="underline text-base hover:text-rose-600 duration-200 text-center " >Cadastre-se</a>
 
                         </div>

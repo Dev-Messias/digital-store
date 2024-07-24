@@ -4,7 +4,7 @@ import logoWhite from '../assets/logo-white.png'
 
 function Footer() {
     return (
-        <div className='w-full py-6 mt- bg-[#1f1f1f] mb-auto ' >
+        <div className='w-full py-6  bg-[#1f1f1f] mb-auto ' >
             <Container>
                 <div className='w-full flex flex-col md:flex-row gap-8 py-6  lg:justify-between ' >
                     <div className='flex flex-col gap-5' >

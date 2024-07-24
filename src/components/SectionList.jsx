@@ -3,77 +3,78 @@ import Container from "./Container";
 import { FaArrowRightLong } from "react-icons/fa6";
 import tenisItem from '../assets/listaItem/tenis2.png'
 import  {Link}  from "react-router-dom";
+import { products } from '../dados/index';
 
-const dataList =[
-    {
-        id: 1,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 30,
-        precoAnterior: 200
-    },
+// const dataList =[
+//     {
+//         id: 1,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         desconto: 30,
+//         precoAnterior: 200
+//     },
 
-    {
-        id: 2,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 3,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 4,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 40,
-        precoAnterior: 500
-    },
-    {
-        id: 5,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 6,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 20,
-        precoAnterior: 260
-    },
-    {
-        id: 7,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 8,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    }
-]
+//     {
+//         id: 2,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         precoAnterior: 200
+//     },
+//     {
+//         id: 3,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         precoAnterior: 200
+//     },
+//     {
+//         id: 4,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         desconto: 40,
+//         precoAnterior: 500
+//     },
+//     {
+//         id: 5,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         precoAnterior: 200
+//     },
+//     {
+//         id: 6,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         desconto: 20,
+//         precoAnterior: 260
+//     },
+//     {
+//         id: 7,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         precoAnterior: 200
+//     },
+//     {
+//         id: 8,
+//         titulo: 'K-Swiss V8 - Masculino',
+//         categoria: 'Tênis',
+//         preco: 100,
+//         img: tenisItem,
+//         precoAnterior: 200
+//     }
+// ]
 
 function SectionList() {
     return (
@@ -85,12 +86,16 @@ function SectionList() {
                             <Link to="/product-list" className="flex flex-row items-center gap-1 text-pink-600 text-base font-medium ">Ver todos <FaArrowRightLong/> </Link>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                {dataList.map((item)=>(
+                                {products.map((item)=>(
                                     <ProductCard key={item.id} 
                                         titulo={item.titulo} 
                                         categoria={item.categoria} 
                                         preco={item.preco} 
-                                        imagem={item.img}
+                                        imagem={item.imagem}
+                                        imagem1={item.imagem1}
+                                        imagem2={item.imagem2}
+                                        imagem3={item.imagem3}
+                                        imagem4={item.imagem4}
                                         desconto={item.desconto}
                                         precoAnterior={item.precoAnterior}
                                     />

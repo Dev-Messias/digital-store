@@ -1,92 +1,36 @@
-import {  useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import Container from './Container';
-import tenisD from '../assets/tenisd1.png'
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 import { TiStarFullOutline } from "react-icons/ti";
 import { FaArrowRightLong } from "react-icons/fa6";
-import tenisItem from '../assets/listaItem/tenis2.png'
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
-
-const dataList = [
-    {
-        id: 1,
-        img: tenisD,
-        bg: 'bg-indigo-100'
-    },
-    {
-        id: 2,
-        img: tenisD,
-        bg: 'bg-orange-100'
-    },
-    {
-        id: 3,
-        img: tenisD,
-        bg: 'bg-red-300'
-    },
-    {
-        id: 4,
-        img: tenisD,
-        bg: 'bg-[#DEC699]'
-    },
-    {
-        id: 5,
-        img: tenisD,
-        bg: 'bg-[#E8DFCF]'
-    },
-]
-
-const dataListItem = [
-    {
-        id: 1,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 30,
-        precoAnterior: 200
-    },
-
-    {
-        id: 2,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 3,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        precoAnterior: 200
-    },
-    {
-        id: 4,
-        titulo: 'K-Swiss V8 - Masculino',
-        categoria: 'Tênis',
-        preco: 100,
-        img: tenisItem,
-        desconto: 40,
-        precoAnterior: 500
-    }
-]
+import { useLocation } from 'react-router-dom';
+import { products } from '../dados/index';
 
 
 function ProductDetails() {
+    const location = useLocation();
+    const { state } = location;
+    const { titulo, categoria, preco, imagem } = state || {}; // Garantir que state existe
     const [thumbsSwiper, setThumbsSwiper] = useState(null)
-    const [activeItem, setActiveItem] = useState()
+    const [activeItem, setActiveItem] = useState();
+    const items = Array.from({ length: 5 });
 
     function handleSetActiveItem(item) {
         setActiveItem(item);
     }
 
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
-        <div className="w-full py-24  " >
+        <div className="w-full py-14  " >
             <Container>
                 <div className='w-full  flex flex-col lg:flex-row gap-8 justify-between' >
                     <div className='w-full  lg:w-[600px] flex-1   ' >
@@ -96,8 +40,6 @@ function ProductDetails() {
                                 '--swiper-navigation-color': '#fff',
                                 '--swiper-pagination-color': '#fff',
                                 'marginBottom': '10px',
-
-
                             }}
                             slidesPerView={1}
                             spaceBetween={0}
@@ -105,10 +47,10 @@ function ProductDetails() {
                             modules={[FreeMode, Navigation, Thumbs]}
                             className="mySwiper2"
                         >
-                            {dataList.map((item) => (
-                                <SwiperSlide key={item.id}  >
-                                    <div className={`w-full  h-96 lg:h-[587px] rounded-lg flex flex-row items-center justify-center ${item.bg}`} >
-                                        <img src={item.img} className='w-96 ' />
+                            {items.map((_, index) => (
+                                <SwiperSlide key={index} >
+                                    <div className={`w-full  h-96 lg:h-[587px] rounded-lg flex flex-row items-center justify-center ${imagem.bg}`} >
+                                        <img src={imagem.url} className='w-96 ' />
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -123,20 +65,19 @@ function ProductDetails() {
                             modules={[FreeMode, Navigation, Thumbs]}
                             className='mySwiper'
                         >
-
-                            {dataList.map((item) => (
-                                <SwiperSlide key={item.id} >
-                                    <div id="swpSlid" className={`w-full rounded-lg  h-14 md:h-24 flex flex-row items-center justify-center ${item.bg}`} >
-                                        <img src={item.img} className='w-12 md:w-24' />
+                            {items.map((_, index) => (
+                                <SwiperSlide key={index}>
+                                    <div id="swpSlid" className={`w-full rounded-lg  h-14 md:h-24 flex flex-row items-center justify-center ${imagem.bg}`} >
+                                        <img src={imagem.url} className='w-12 md:w-24' />
                                     </div>
                                 </SwiperSlide>
                             ))}
+
                         </Swiper>
                     </div>
                     <div className='w-full flex-1 flex flex-col gap-1'>
                         <div>
-                            <h4 className=' text-2xl md:text-4xl lg:text-4xl font-bold mb-2' >Tênis Nike Revolution
-                                6 Next Nature Masculino</h4>
+                            <h4 className=' text-2xl md:text-4xl lg:text-4xl font-bold mb-2' >{titulo}</h4>
                             <p className=' text-sm md:text-base text-gray-500' >Casual | Nike | REF:38416711</p>
                         </div>
                         <div className='w-full flex flex-row items-center gap-2 mt-2'>
@@ -154,7 +95,7 @@ function ProductDetails() {
 
                         </div>
                         <div className='mt-2' >
-                            <p className='text-2xl font-semibold' ><span className='text-base text-gray-400 font-medium'>R$ </span>219,99 <del className='text-base text-gray-400 font-medium' >220</del></p>
+                            <p className='text-2xl font-semibold' ><span className='text-base text-gray-400 font-medium'>R$ </span>{preco} <del className='text-base text-gray-400 font-medium' >220</del></p>
                         </div>
                         <div className='mt-4' >
                             <p className='font-semibold text-gray-400 text-base' >Descrição do produto</p>
@@ -212,18 +153,18 @@ function ProductDetails() {
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col mt-16 lg:mt-28" >
+                <div className="w-full flex flex-col mt-16 lg:mt-16" >
                     <div className="w-full flex flex-row items-center justify-between mb-10" >
                         <h4 className="text-gray-700 text-xl font-semibold " >Coleções em destaque</h4>
                         <Link to="/product-list" className="flex flex-row items-center gap-1 text-pink-600 text-base font-medium ">Ver todos <FaArrowRightLong /> </Link>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {dataListItem.map((item) => (
+                        {products.map((item) => (
                             <ProductCard key={item.id}
                                 titulo={item.titulo}
                                 categoria={item.categoria}
                                 preco={item.preco}
-                                imagem={item.img}
+                                imagem={item.imagem}
                                 desconto={item.desconto}
                                 precoAnterior={item.precoAnterior}
                             />

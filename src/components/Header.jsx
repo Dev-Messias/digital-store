@@ -36,7 +36,7 @@ function Header() {
                         </div>
                         <div className=" flex flex-row items-center justify-center gap-6 ml-5 md:ml-2" >
                             <a href="#" className="underline text-base hover:text-rose-600 duration-200 " >Cadastre-se</a>
-                            <a href="#" className="bg-pink-600 px-6 font-semibold py-1 rounded-lg text-slate-50 hover:bg-pink-700 duration-200 " >Entrar</a>
+                            <Link to="#" className="bg-pink-600 px-6 font-semibold py-1 rounded-lg text-slate-50 hover:bg-pink-700 duration-200 " >Entrar</Link>
                         </div>
                     </div>
                     <div className="flex flex-row gap-2 items-center justify-center " >
